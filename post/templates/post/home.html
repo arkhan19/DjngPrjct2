@@ -8,15 +8,13 @@
 <h1> Home in Post templates.....</h1>
 <center><h2> Latest Posts </h2></center>
 {% for post in latest_post.all %}
-    <center>
-    {{ post.title }}
+    <center><h3>
+        {{ post.title }}</h3><br />
+        {{ post.pub_date_modified }}<br />
+        <img src ="{{ post.img.url }}"><br />
+        {{ post.summary }}<br /> <br />
 
-<br />
-{{ post.pub_date }}
-<br />
-{{ post.text }}
-        <br /> <br />
-</center>
+    </center>
 {% endfor %}
 </body>
 </html>
