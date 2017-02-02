@@ -7,13 +7,13 @@
 <body>
 <h1> Home in Post templates.....</h1>
 <center><h2> Latest Posts </h2></center>
-{% for post in latest_post.all %}
+{% for every_post in latest_post.all %}
     <center><h3>
-        {{ post.id}}</h3><br />
-
-        {{ post.pub_date_modified }}<br />
-        <img src ="{{ post.img.url }}"><br />
-        {{ post.summary }}<br /> <br />
+        <a href="{% url 'post_link' every_post.id %}">{{ every_post.title }}</a></h3>
+        <br />
+        {{ every_post.pub_date_modified }}<br />
+        <img src ="{{ every_post.img.url }}"><br />
+        {{ every_post.summary }}<br /> <br />
 
     </center>
 {% endfor %}

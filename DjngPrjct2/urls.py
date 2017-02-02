@@ -22,6 +22,6 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.home),
-    url(r'^post/(?P<post_id>[0-9]+)/$', views.post_sp),
+    url(r'^post/(?P<post_id>[0-9]+)/$', views.post_sp, name="post_link"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
