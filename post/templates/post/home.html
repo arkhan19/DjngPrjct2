@@ -6,6 +6,9 @@
 </head>
 <body>
 <h1> Home in Post templates.....</h1>
-
+<center><h2> Latest Posts </h2></center>
+{% for post in latest_post.all %}
+{{ post.title }}
+{% endfor %}
 </body>
 </html>
