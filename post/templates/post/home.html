@@ -33,7 +33,7 @@
     </div>
       <div class="collapse navbar-collapse" id="navb">
       <ul class="nav navbar-nav">
-          <li><a href="#">About Me</a></li>
+          <li><a href="{% url 'side_link' %}">About Me</a></li>
           <li><a href = "https://github.com/dARKf3n1Xx/">Github</a></li>
           <li><a href = "https://twitter.com/dARK_f3n1Xx">Twitter</a></li>
       </ul>
@@ -44,18 +44,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<h1> Home in Post templates.....</h1>
-<center><h2> Latest Posts </h2></center>
+<div class = "container">
+  <h1 class=" text-center"> Home </h1>
+<h2> Latest Posts </h2>
 {% for every_post in latest_post.all %}
-    <center><h3>
+    <h3>
         <a href="{% url 'post_link' every_post.id %}">{{ every_post.title }}</a></h3>
-        <br />
+        <br /><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>
         {{ every_post.pub_date_modified }}<br />
-        <img src ="{{ every_post.img.url }}"><br />
-        {{ every_post.summary }}<br /> <br />
+        <img src ="{{ every_post.img.url }}" class="img-responsive center-block" style="max-height:400px;"><br />
+        {{ every_post.summary }}<br /><hr> <br />
 
-    </center>
+
 {% endfor %}
+    </div>
 </body>
 </html>
 
